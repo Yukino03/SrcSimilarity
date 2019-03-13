@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import sys
-import readsrc as rs
+from mylib import src
+from mylib import diff
 
-src = rs.SrcFile("similarity_decision.py")
-src.print_src()
+src1 = src.Src(__file__)
+src2 = src.Src(__file__)
+

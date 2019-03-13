@@ -3,7 +3,7 @@
 
 import sys
 
-class SrcFile():
+class Src():
   def __init__(self, filepath):
     self.__path = filepath
     self.read_file(filepath)
@@ -31,7 +31,7 @@ if __name__ == "__main__":
     print("Argument Error")
     sys.exit(1)
   else:
-    src = SrcFile(args[1])
+    src = Src(args[1])
     src.print_src()
     print(src.get_line(0))
     sys.exit(0)
