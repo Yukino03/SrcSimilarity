@@ -1,2 +1,5 @@
 .DS_Store
 contents/
+src/mylib/__pycache__/diff.cpython-36.pyc
+src/mylib/__pycache__/__init__.cpython-36.pyc
+src/mylib/__pycache__/src.cpython-36.pyc
