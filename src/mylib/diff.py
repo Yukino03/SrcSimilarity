@@ -18,4 +18,5 @@ def extract_func(line):
   result = re.compile(".*(?=\(.*\))").match(line)
 # 後方から見て最初の空白orカンマまでを抽出
 # result = re.compile("").match(line)
+
   return result

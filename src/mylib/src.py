@@ -3,13 +3,12 @@
 
 import sys
 from tokenize import tokenize,untokenize
-
+from io import BytesIO
 class SrcList():
   def __init__(self, path):
     self.path = path
     self.read_file(path)
     self._i = 0
-    self.tokenize()
 
   def __len__(self):
     return len(self.lines)
@@ -21,22 +20,38 @@ class SrcList():
     with open(filepath) as f:
       self.lines = [s.rstrip() for s in f.readlines()]
       self.it = iter(self.lines)
+    with open(filepath) as d:
+      self.tokens = [s.encode() for s in d.readlines()]
 
   def print_src(self):
     for line in self.lines:
       print(line)
 
+  def normalize(self):
+    """Change lines. NO indent, """
+    print('stab')
+
   def get_lineb(self, n):
     return self.lines[n].encode(encoding="utf-8")
 
-  def tokenize_a(self, byterow):
-    '''tokenize a line.FIXME'''
-    tmp = tokenize(byterow.readline)
-    return tmp
+  def tokenize_a(self, n):
+    '''raw tokenize a line(By line num)'''
+    result = []
+    tmp = tokenize(BytesIO(self.get_lineb(n)).readline)
+    for toknum, tokval, _, _, _ in tmp:
+      result.append((toknum, tokval))
+    return result
 
-  def tokenize(self):
-    '''FIXME'''
-    print("stab")
+  def tokenize(self,n):
+    '''practical tokenize'''
+    result = []
+    tmp = tokenize(BytesIO(self.get_lineb(n)).readline)
+    for _, tokval, _, _, _ in tmp:
+      if tokval != '':
+        result.append(tokval)
+    if len(result) > 0:
+      result.pop(0)
+    return result
 
   def get_path(self):
     return self.path

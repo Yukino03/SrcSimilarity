@@ -106,3 +106,4 @@ venv.bak/
 # mac
 .DS_Store
 .vscode/settings.json
+documents/warmup.key
