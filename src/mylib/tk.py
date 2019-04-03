@@ -9,7 +9,8 @@ def tknize(string):
     print(toknum,tokval)
   return untokenize(result).decode('utf-8')
 
-f = open(__file__)
-for x in f:
-  txt = tknize(x.encode())
-f.close()
+if __name__ == "__main__":
+  f = open(__file__)
+  for x in f:
+    txt = tknize(x.encode())
+  f.close()

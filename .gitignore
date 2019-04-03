@@ -107,3 +107,10 @@ venv.bak/
 .DS_Store
 .vscode/settings.json
 documents/warmup.key
+/test_data
+documents/report.aux
+documents/report.bbl
+documents/report.fdb_latexmk
+documents/report.blg
+documents/report.fls
+documents/plistings.sty

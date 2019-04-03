@@ -27,10 +27,6 @@ class SrcList():
     for line in self.lines:
       print(line)
 
-  def normalize(self):
-    """Change lines. NO indent, """
-    print('stab')
-
   def get_lineb(self, n):
     return self.lines[n].encode(encoding="utf-8")
 

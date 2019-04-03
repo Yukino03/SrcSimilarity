@@ -1,0 +1,1 @@
+python main.py ../test_data/kadai06-02.py ../test_data/kadai6-2.py
